@@ -1,0 +1,152 @@
+---
+title: 財富自由計算機｜首頁
+layout: ./app/layout.ejs
+engine: ejs
+current: index
+---
+<section>
+  <div class="banner">
+    <div class="container w-100 h-100">
+      <div class="row  w-100 h-100 align-items-center">
+        <div class="col-xl-8 col-12">
+          <div class="banner-body text-white">
+            <h2 class="banner-header fw-bolder mb-4">Financial Independence,</br>Retire Early</h2>
+            <p class="banner-text">財務獨立，提早退休，又簡稱為FIRE，指透過複利的力量使資產自動成長，每年能固定提領部分收益，同時有效的對抗通膨。</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<section class="description">
+  <div class="description-content description-inflation container">
+    <div class="row flex-xl-row flex-column-reverse">
+      <div class="col-xl-6 col-12 d-flex flex-column justify-content-xl-center">
+        <h3 class="description-header z-index-3">近幾年你有感覺到物價飛漲嗎？</h3>
+        <p class="description-text z-index-3">
+          你還有印象很多年前，一個排骨便當只要五十塊的時候嗎？但不知道什麼時候，一個排骨便當已經漲到九十塊了。不只是飲食，生活用品、房價跟租金也都漲價了，同樣的錢能買到的東西卻變少了，因為通膨正悄悄的吃掉你的購買力。</p>
+      </div>
+      <div class="col-xl-6 col-12">
+        <img src="./assets/images/description-1.jpg" alt="插圖-1">
+      </div>
+    </div>
+  </div>
+  <div class="description-content description-free ">
+    <div class="container d-flex flex-column justify-content-center text-white h-100">
+      <h3 class="description-header text-center z-index-3">你擁有選擇的自由嗎？</h3>
+      <p class="description-text text-xl-center z-index-3">
+        無論是人生要怎麼過，或者是要做什麼工作，你有因為經金錢考量必須做一些自己不喜歡的選擇嗎？如果擁有一條退路可以讓你不用擔心生活開銷，將選擇的自由權交還自己手上該有多好呢？</p>
+    </div>
+  </div>
+  <div class="description-content description-retirement container">
+    <div class="row flex-xl-row flex-column-reverse">
+      <div class="col-xl-6 col-12 d-flex flex-column justify-content-xl-center">
+        <h3 class="description-header z-index-3">你想過怎樣的退休生活呢？</h3>
+        <p class="description-text z-index-3">
+          你是物慾不強，簡單的過生活也很好的人呢？或是你是希望環遊世界去看遍不同的風景的人呢？還是還沒有思考過要過怎樣的退休生活呢？每個人想要的生活方式不一樣，自然也會影響到最終能財富自由的數字，你可以及早開始思考，逐步實踐自己的規劃，最終過上自己想過的生活。
+        </p>
+      </div>
+      <div class="col-xl-6 col-12">
+        <img src="./assets/images/description-3.jpg" alt="插圖-3">
+      </div>
+    </div>
+  </div>
+</section>
+<section class="clac">
+  <div class="calc-introduction">
+    <div class="container text-lg-center text-white">
+      <div class="row justify-content-center">
+        <div class="col-12 col-lg-11 z-index-3">
+          <div class="calc-introduction-content">
+            <h2 class="calc-introduction-header fw-bolder">財富自由計算機</h2>
+            <p class="calc-introduction-text">在開始進行規劃之前，需要請你先從你目前的財務狀況，並藉此計算出你的財富自由數字、以及你距離財富自由的距離。</p>
+            <button class="btn btn-radial py-3"><a href="#clacArea"
+                class="text-white fw-bolder text-decoration-none">開始試算</a></button>
+          </div>
+          <p class="calc-introduction-tips">或是<a href="./register.html" class="text-reset">註冊</a>或<a href="./login.html"
+              class="text-reset">登入</a>，使用更進階的FIRE計算機功能</p>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="calc-area" id="clacArea">
+    <div class="container d-flex position-relative">
+      <div class="calc-area-wrap row mx-0">
+        <div class="calc-area-data col-xl-5 d-flex flex-column align-items-center">
+          <div class="index-clac-chart chart mb-4"></div>
+          <div class="text-white text-center border w-80 fs-5">
+            <p class="border-bottom p-2">你的財富自由目標為</p>
+            <p data-FINum>？？？萬</p>
+          </div>
+        </div>
+        <div class="calc-area-form text-white d-flex flex-column align-items-center">
+          <form action="" class="w-100" data-form-list>
+            <div class="calc-area-form-group mb-3 fs-5">
+              <label for="annualExpenses" class="calc-area-label d-block">現在的年支出</label>
+              <input type="text" id="annualExpenses" class="calc-area-input calc-area-input-l me-2" name="年支出">萬元
+            </div>
+            <div class="calc-area-form-group mb-3 fs-5">
+              <div>
+                <label for="" class="calc-area-label col-xl-6 d-block mb-2">一次性大筆支出</label>
+                預估<input type="text" class="calc-area-input calc-area-input-s mx-2 mb-2" name="幾年後支出1">年後，
+                需要支出<input type="text" class="calc-area-input calc-area-input-m mx-2" name="大筆支出1">萬元<br>
+                預估<input type="text" class="calc-area-input calc-area-input-s mx-2 mb-2" name="幾年後支出2">年後，
+                需要支出<input type="text" class="calc-area-input calc-area-input-m mx-2" name="大筆支出2">萬元<br>
+                預估<input type="text" class="calc-area-input calc-area-input-s mx-2 mb-2" name="幾年後支出3">年後，
+                需要支出<input type="text" class="calc-area-input calc-area-input-m mx-2" name="大筆支出3">萬元
+              </div>
+              <button class="calc-area-plusbtn text-primary d-block"><span
+                  class="calc-area-icon material-symbols-outlined align-top text-primary"
+                  data-btn-add>add_circle</span>新增一筆</button>
+            </div>
+            <div class="calc-area-form-group mb-3 fs-5">
+              <label for="" class="calc-area-label d-block">預估每年可投資金額</label>
+              <input type="text" class="calc-area-input calc-area-input-l me-2" name="每年投資金額">萬元
+            </div>
+            <div class="calc-area-form-group mb-3 fs-5">
+              <label for="" class="calc-area-label d-block">目前已進行投資金額</label>
+              <input type="text" class="calc-area-input calc-area-input-l me-2 me-2" name="已投入金額">萬元
+            </div>
+            <div class="calc-area-form-group mb-3 fs-5">
+              <label for="" class="calc-area-label">預估每年提領率</label>
+              <input type="text" class="calc-area-input calc-area-input-m me-2" name="預估每年提領率" value="4">%
+            </div>
+            <div class="calc-area-form-group mb-3 fs-5">
+              <label for="" class="calc-area-label">預估年平均投報率</label>
+              <input type="text" class="calc-area-input calc-area-input-m me-2" name="預估平均年報酬" value="7">%
+            </div class="calc-area-form-group mb-3 fs-5">
+            <div class="d-flex">
+              <input type="button" value="清除" class="calc-area-btn btn btn-outline-primary d-block w-100 fs-5"
+                data-btn-clear>
+              <input type="button" value="計算" class="calc-area-btn btn btn-radial d-block w-100 fs-5" data-btn-clac>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<section>
+  <div class="recommend">
+    <div class="container">
+      <h3 class="recommend-header text-center text-white fw-bolder">計算完畢後，下一步你可以</h3>
+      <div class="recommend-content row justify-content-center py-3">
+        <div class="col-xl-5">
+          <h4 class="recommend-content-book py-3 text-white">推薦書籍</h4>
+          <ul class="list-unstyled text-white">
+            <li><a href="" class="py-3 text-reset">財務自由，提早過你真正想過的生活</a></li>
+          </ul>
+        </div>
+        <div class="col-xl-5">
+          <h4 class="recommend-content-article py-3 text-white">推薦文章</h4>
+          <ul class="list-unstyled text-white">
+            <li><a href="#" class="py-3 text-reset">為何複利可以幫助你達到財富自由？</a></li>
+            <li><a href="#" class="py-3 text-reset">現在的每一筆支出怎麼延遲你財富自由的時間</a></li>
+            <li><a href="#" class="py-3 text-reset">比減少支出更重要的是增加收入</a></li>
+            <li><a href="#" class="py-3 text-reset">何謂4%法則？如何利用它來錢滾錢？</a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

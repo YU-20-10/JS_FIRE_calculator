@@ -1,0 +1,56 @@
+//響應式電腦版
+@mixin destop {
+    @media (min-width:1200px) {
+        @content;
+    }
+}
+
+//上下/左右一起設定
+@mixin py($phone-py, $pc-py) {
+    padding-top: $phone-py;
+    padding-bottom: $phone-py;
+
+    @media (min-width:1200px) {
+        padding-top: $pc-py;
+        padding-bottom: $pc-py;
+    }
+}
+
+@mixin px($phone-px, $pc-px) {
+    padding-right: $phone-px;
+    padding-left: $phone-px;
+
+    @media (min-width:1200px) {
+        padding-right: $pc-px;
+        padding-left: $pc-px;
+    }
+}
+
+@mixin my($phone-my, $pc-my) {
+    margin-top: $phone-my;
+    margin-bottom: $phone-my;
+
+    @media (min-width:1200px) {
+        margin-top: $pc-my;
+        margin-bottom: $pc-my;
+    }
+}
+
+@mixin mx($phone-mx, $pc-mx) {
+    margin-right: $phone-mx;
+    margin-left: $phone-mx;
+
+    @media (min-width:1200px) {
+        margin-right: $pc-mx;
+        margin-left: $pc-mx;
+    }
+}
+
+//一次設定手機板&電腦版字體
+@mixin font($phone-fz, $pc-fz) {
+    font-size: $phone-fz;
+
+    @media (min-width:1200px) {
+        font-size: $pc-fz;
+    }
+}

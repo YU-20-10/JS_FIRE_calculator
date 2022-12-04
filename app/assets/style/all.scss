@@ -1,0 +1,483 @@
+@import "../../../node_modules/bootstrap/scss/functions";
+@import "../style/mixin&variables/mixin.scss";
+@import "./helpers/variables";
+@import "../../../node_modules/bootstrap/scss/bootstrap";
+
+
+@import './layout/index.scss';
+
+
+img {
+  max-width: 100%;
+
+}
+
+.z-index-3 {
+  z-index: 3;
+}
+
+.btn-radial {
+  background: radial-gradient(#03CBE6, #0276FF);
+  color: white;
+
+  &:hover {
+    background: $primary;
+  }
+}
+
+.fill-white {
+  fill: white;
+}
+
+.w-80 {
+  width: 80%;
+}
+
+header {
+  background: #1A1A1A;
+
+  .navbar {
+    @include py(12px,12px)
+  }
+
+  .nav-link {
+    @include mx(0, 24px);
+  }
+
+  .usermenu {
+
+    &-wrap {
+      width: 50px;
+      height: 50px;
+    }
+
+    &-icon {
+      font-size: 50px;
+    }
+
+    .dropdown-toggle {
+      &::after {
+        display: none;
+      }
+    }
+  }
+}
+
+.banner {
+  height: 265px;
+  background: url("../images/header_banner_phone.png") no-repeat center/cover;
+
+  @include destop {
+    height: 500px;
+    background: url("../images/header_banner_pc.png") no-repeat center/cover;
+
+  }
+
+  &-body {
+    @include px(20px, 112px);
+
+  }
+
+  &-header {
+    @include font(24px, 50px);
+  }
+
+  &-text {
+    @include font(16px, 24px);
+  }
+
+}
+
+.description {
+  &-header {
+    margin-bottom: 12px;
+    @include font(24px, 40px);
+
+    @include destop {
+      margin-bottom: 28px;
+    }
+  }
+
+  &-text {
+    @include font(16px, 24px);
+  }
+
+  &-content {
+    @include py(32px, 100px);
+  }
+
+  &-free {
+    height: 300px;
+    background: url("../images/description-2.jpg") no-repeat 50% 70%/cover;
+    position: relative;
+
+    &::after {
+      content: '';
+      position: absolute;
+      background-color: #000000;
+      top: 0;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      opacity: 0.3;
+    }
+
+    @include destop {
+      height: 800px;
+    }
+  }
+
+}
+
+
+
+.calc-introduction {
+  // background-image: url("../images/clac_gradient_introduction.png");
+  background-color: #0A1C32;
+  position: relative;
+
+  @include py(40px, 150px);
+
+
+  &-content {
+    background-color: #53606f;
+    border-radius: 20px;
+    margin-bottom: 20px;
+    @include py(32px, 80px);
+    @include px(24px, 64px);
+  }
+
+  &-header {
+    margin-bottom: 20px;
+    @include font(24px, 40px);
+  }
+
+  &-text {
+    margin-bottom: 60px;
+    @include font(20px, 28px);
+  }
+
+  &-tips {
+    @include font(20px, 24px);
+  }
+
+  &::before {
+    content: "";
+    position: absolute;
+    background-image: url("../images/clac_gradient_introduction.png");
+    background-size: cover;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+  }
+
+  .btn-radial {
+    border-radius: 10px;
+    @include px(103.5px, 60px);
+    @include font(28px, 32px);
+  }
+}
+
+.calc-area {
+  background-color: #0A1C32;
+  position: relative;
+
+  @include py(40px, 84px);
+
+  &-wrap {
+    z-index: 3;
+  }
+
+  &-form {
+    padding-top: 60px;
+    padding-bottom: 28px;
+    background-color: #2f3e51;
+    border: 2px solid white;
+    border-radius: 20px;
+    z-index: 3;
+    left: 80%;
+    top: -10%;
+
+    @include px(16px, 40px);
+
+    @include destop {
+      padding-top: 70px;
+      padding-bottom: 30px;
+      position: relative;
+      left: 70%;
+    }
+  }
+
+  // &-form-group {
+  //   @include font(20px, 20px);
+  // }
+
+  &-label {
+    margin-bottom: 10px;
+    @include font(20px, 24px);
+  }
+
+  &-input {
+    height: 45px;
+    background-color: #6f7b88;
+    border-radius: 5px;
+    border-width: 0px;
+    text-align: center;
+  }
+
+  &-input-s {
+    width: 10%;
+  }
+
+  &-input-m {
+    width: 20%;
+  }
+
+  &-input-l {
+    width: 80%;
+  }
+
+  &-data {
+    background-color: #2f3e51;
+    border-radius: 20px;
+
+    @include py(40px, 95.5px);
+    @include px(40px, 110px);
+
+    @include destop {
+      position: absolute;
+      // left: 10%;
+    }
+  }
+
+
+  &-plusbtn {
+    border-width: 0px;
+    background-color: transparent;
+  }
+
+  &::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    left: 0;
+    background-image: url("../images/clac_gradient_area.png");
+    background-size: cover;
+  }
+
+  .btn-outline-primary {
+    margin-right: 12px;
+
+    @include destop {
+      margin-right: 20px;
+    }
+  }
+
+
+
+}
+
+.recommend {
+  background: #666666;
+  @include py(40px, 80px);
+
+  &-header {
+    margin-bottom: 12px;
+
+    @include font(24px, 40px);
+
+    @include destop {
+      margin-bottom: 40px;
+    }
+  }
+
+  &-content h4 {
+    @include font(24px, 40px);
+  }
+
+  &-content li {
+    @include font(20px, 28px);
+
+  }
+}
+
+.footer {
+  background: #333333;
+  @include py(20px, 40px);
+
+  &-logo {
+    padding-bottom: 24px;
+    margin-bottom: 20px;
+    border-bottom: 1px solid #CCCCCC;
+
+    @include destop {
+      padding-bottom: 60px;
+    }
+  }
+}
+
+
+.user-login {
+  @include py(60px, 100px);
+}
+
+
+
+.user-register {
+  @include py(60px, 100px);
+}
+
+.user-page {
+
+  &-home {
+    @include py(60px, 100px);
+  }
+
+  &-profile.card {
+    border-width: 0px 0px 1px 0px;
+
+  }
+
+  &-user-img {
+    width: 100px;
+    height: 100px;
+    // background-image: url("https://www.shonenjump.com/j/rensai/img/hunter_character3.jpg");
+    // background-size: cover;
+  }
+
+  &-bg-img {
+    height: 50%;
+    width: 100%;
+    
+    &::before {
+      content: "";
+      position: absolute;
+      left: 0;
+      right: 0;
+      top: 0;
+      bottom: 0;
+      background-color: #000;
+      opacity: 0.5;
+
+
+    }
+
+    &:hover {
+      &::before {
+        opacity: 0.2;
+      }
+
+    }
+
+    .card-title,
+    .card-text {
+      color: white;
+      z-index: 3;
+    }
+  }
+
+  &-bg-img-1 {
+    background: url("../images/user-page-FINum-img.jpg") no-repeat center 65%/cover;
+    min-height: 200px;
+  }
+
+  &-bg-img-2 {
+    background: url("https://images.unsplash.com/photo-1633158829875-e5316a358c6f?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=870&q=80") no-repeat center/cover;
+    min-height: 200px;
+  }
+
+  &-clac-outer {
+    width: 100%;
+
+    @include destop {
+      width: 50%;
+    }
+  }
+
+  &-card-outer {
+    width: 100%;
+
+    @include destop {
+      width: 50%;
+    }
+  }
+
+}
+
+.user-page-FINum  {
+  @include py(60px, 100px);
+  @include font(20px, 24px);
+
+  input {
+    text-align: center;
+  }
+
+  &-fixed {
+    position: fixed;
+    top: 200px;
+    right: 0;
+    left: 80%;
+    z-index: 3;
+  }
+
+  &-icon {
+    width: 80px;
+    height: 80px;
+    background: $primary;
+    color: white;
+    font-size: 20px;
+
+    &:hover {
+      background: white;
+      color: black;
+      
+    }
+  }
+
+  &-two-column {
+    width: 100%;
+
+    @include destop{
+      width: 45%;
+    }
+  }
+
+  &-column-big {
+    width: 60%;
+  }
+
+  &-column-small {
+    width: 30%;
+  }
+  &-column-md {
+    width: 100%;
+
+    @include destop {
+      width: 50%;
+    }
+  }
+}
+
+.backstage {
+  &-wrap {
+    height: 100vh;
+  }
+  
+  &-menu {
+    width: 200px;
+  }
+  
+  .active {
+    background: white;
+  }
+  
+  &-user-img {
+    height: 50px;
+    width: 50px;
+    // background: url("https://images.unsplash.com/photo-1669130950037-3d33bd490971?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1854&q=80")  center/cover;
+  }
+}
+

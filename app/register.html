@@ -1,0 +1,40 @@
+---
+title: 財富自由計算機｜註冊
+layout: ./app/layout.ejs
+engine: ejs
+---
+<section class="user-register container">
+    <div class="row justify-content-center">
+        <form class="col-12 col-xl-4 d-flex flex-column align-items-center" data-register-form>
+            <div class="mb-3 row w-100">
+                <label for="register-username" class="col-sm-3 col-form-label">暱稱</label>
+                <div class="col-sm-9">
+                    <input type="text" class="form-control" id="register-username" placeholder="煞氣a小花" name="name">
+                </div>
+            </div>
+            <div class="mb-3 row w-100">
+                <label for="register-email" class="col-sm-3 col-form-label">信箱</label>
+                <div class="col-sm-9">
+                    <input type="text" class="form-control" id="register-email" placeholder="example@gmail.com" name="email">
+                </div>
+            </div>
+            <div class="mb-3 row w-100">
+                <label for="register-password" class="col-sm-3 col-form-label">密碼</label>
+                <div class="col-sm-9">
+                    <input type="password" class="form-control" id="register-password" placeholder="請輸入5~12位英文或數字"
+                    name="password">
+                </div>
+            </div>
+            <div class="mb-5 row w-100">
+                <label for="register-password-check" class="col-sm-3 col-form-label">密碼確認</label>
+                <div class="col-sm-9">
+                    <input type="password" class="form-control" id="register-password-check" placeholder="請再輸入一次密碼"
+                    name="passwordCheck">
+                </div>
+            </div>
+            <div>
+                <a role="button" class="btn btn-primary px-4" data-register>註冊</a>
+            </div>
+        </form>
+    </div>
+</section>
