@@ -6,7 +6,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <title>
-    <%- title %>
+    財富自由計算機｜登入
   </title>
   <link rel="stylesheet"
     href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,400,1,0" />
@@ -63,7 +63,40 @@
 
 
 
-  <%- contents %>
+  <section class="user-login container">
+    <div class="row justify-content-center">
+        <form class="col-12 col-xl-4 d-flex flex-column align-items-center" data-login-form>
+            <div class="mb-3 row w-100">
+                <label for="login-email" class="col-sm-2 col-form-label">信箱</label>
+                <div class="col-sm-10">
+                    <input type="text" class="form-control" id="login-email" placeholder="example@gmail.com"
+                        name="email">
+                </div>
+            </div>
+            <div class="mb-5 row w-100">
+                <label for="login-password" class="col-sm-2 col-form-label">密碼</label>
+                <div class="col-sm-10">
+                    <input type="password" class="form-control" id="login-password" placeholder="請輸入密碼" name="password">
+                </div>
+            </div>
+            <div>
+                <a role="button" class="loginBtn btn btn-primary px-4 me-3" data-login>登入</a>
+                <a role="button" class="btn btn-outline-secondary">忘記密碼</a>
+
+                <!-- Modal -->
+                <!--  data-bs-toggle="modal" data-bs-target="#exampleModal" -->
+                <!-- <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel"
+                    aria-hidden="true">
+                    <div class="modal-dialog">
+                        <div class="modal-content">
+                            
+                        </div>
+                    </div>
+                </div> -->
+            </div>
+        </form>
+    </div>
+</section>
 
     <footer class="footer">
       <div class="container">

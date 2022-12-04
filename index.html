@@ -1,10 +1,69 @@
----
-title: 財富自由計算機｜首頁
-layout: ./app/layout.ejs
-engine: ejs
-current: index
----
-<section>
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>
+    財富自由計算機｜首頁
+  </title>
+  <link rel="stylesheet"
+    href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,400,1,0" />
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/c3/0.7.18/c3.css" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/css/all.min.css" />
+  <link rel="stylesheet" href="./assets/style/all.css">
+</head>
+
+<body>
+  <header>
+    <div class="container">
+      <nav class="navbar navbar-expand-lg navbar-darks">
+        <div class="container-fluid">
+          <h1 class="mb-0"><a href="./index.html" class="d-block text-decoration-none">FIRE計算機</a></h1>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+            data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
+            aria-label="Toggle navigation">
+            <!-- <span class="navbar-toggler-icon"></span> -->
+            <span class="material-symbols-outlined text-white">menu</span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+              <li class="nav-item">
+                <a class="nav-link active fs-4 text-white" aria-current="page" href="./index.html">首頁</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link fs-4 text-white" href="./blog.html">文章</a>
+              </li>
+            </ul>
+            <div class="navbar-nav">
+              <button type="button" class="btn  btn-radial me-5"><a  href="#clacArea" class=" fw-bolder text-white text-decoration-none">FIRE計算機</a></button>
+              <div class="usermenu dropdown nav-item">
+                <a class="usermenu-wrap dropdown-toggle nav-link p-0"id="userBtnDropdown" role="button"
+                  data-bs-toggle="dropdown" aria-expanded="false" data-nav-user-img>
+                  <!-- <span class="usermenu-icon material-symbols-outlined text-primary align-middle">
+                    account_circle
+                  </span> -->
+                </a>
+                <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="userBtnDropdown" data-nav-dropdowm-menu>
+                  <li><a class="dropdown-item text-center" href="./login.html">登入</a></li>
+                  <li><a class="dropdown-item text-center" href="./register.html">註冊</a></li>
+                </ul>
+              </div>
+              <!-- <ul class="dropdown-menu">
+                <li><a class="dropdown-item text-center" href="#">登入</a></li>
+                <li><a class="dropdown-item text-center" href="#">註冊</a></li>
+              </ul> -->
+            </div>
+          </div>
+        </div>
+      </nav>
+    </div>
+  </header>
+
+
+
+  <section>
   <div class="banner">
     <div class="container w-100 h-100">
       <div class="row  w-100 h-100 align-items-center">
@@ -150,3 +209,31 @@ current: index
     </div>
   </div>
 </section>
+
+    <footer class="footer">
+      <div class="container">
+        <div class="row justify-content-center">
+          <div class="col-xl-11">
+            <h1><a href="#" class="footer-logo d-block text-decoration-none">FIRE計算機</a></h1>
+            <nav class="d-flex justify-content-between">
+              <ul class="d-flex list-unstyled text-white">
+                <li><a href="#" class="footer-link fs-3 pe-6 border-end text-decoration-none text-reset">首頁</a></li>
+                <li><a href="#" class="footer-link fs-3 px-6 border-end text-decoration-none text-reset">文章</a></li>
+                <li><a href="./userpage.html" class="footer-link fs-3 ps-6 text-decoration-none text-reset">會員</a></li>
+              </ul>
+              <p class="footer-text fs-4 text-white">© 2022 FIRE calculator</p>
+            </nav>
+          </div>
+        </div>
+      </div>
+    </footer>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/1.1.3/axios.min.js"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/validate.js/0.13.1/validate.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/d3/5.16.0/d3.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/c3/0.7.20/c3.min.js"></script>
+    <script src="./assets/js/vendors.js"></script>
+    <script src="./assets/js/all.js"></script>
+</body>
+
+</html>
