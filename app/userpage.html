@@ -23,19 +23,72 @@ engine: ejs
                 <div class="user-clac-chart"></div>
             </div>
             <div class="user-page-card-outer">
-                <div class="card w-100 h-50">
+                <div class="card w-100">
                     <a href="./userpage-FINum.html"
                         class="user-page-bg-img user-page-bg-img-1 card-body d-block text-decoration-none d-flex flex-column justify-content-center align-items-center">
-                        <h5 class="card-title">FIRE計算機</h5>
-                        <p class="card-text">點選這裡開始進行財富目標計算</p>
+                        <h5 class="card-title">財富自由目標<span class="calc-area-form-require ms-2">*</span></h5>
+                        <p class="card-text" data-userpage-FINum>點選這裡開始進行財富目標計算</p>
                     </a>
                 </div>
-                <div class="card w-100 h-50">
-                    <a href="#"
+                <div class="w-100  py-3">
+                    <!-- <a href="#"
                         class="user-page-bg-img user-page-bg-img-2 card-body d-block text-decoration-none d-flex flex-column justify-content-center align-items-center">
                         <h5 class="card-title">個人經濟狀況</h5>
                         <p class="card-text">點選這裡開始進行個人經濟狀況統整</p>
-                    </a>
+                    </a> -->
+                    <div class="row g-3" data-userpage-btn-wrap>
+                        <div class="col-6">
+                            <div class="card align-items-center text-center">
+                                <div class="card-body">
+                                    <h5 class="card-title fs-4">預估退休時每年提領率<span class="calc-area-form-require ms-2">*</span></h5>
+                                    <p class="card-text py-3 mb-2" data-userpage-content="targetWithdrawalRate"><span
+                                            data-userpage-FINum-render="targetWithdrawalRate">？？</span>%</p>
+                                    <a href="#" class="card-link btn btn-outline-primary"
+                                        data-userpage-editbtn="targetWithdrawalRate">編輯</a>
+                                    <a href="#" class="card-link btn btn btn-outline-danger" data-userpage-savebtn="targetWithdrawalRate">存檔</a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-6">
+                            <div class="card align-items-center text-center">
+                                <div class="card-body">
+                                    <h5 class="card-title fs-4">預估平均年投資報酬率<span class="calc-area-form-require ms-2">*</span></h5>
+                                    <p class="card-text py-3 mb-2" data-userpage-content="expectedInvestmentAnnualReturn"><span
+                                            data-userpage-FINum-render="expectedInvestmentAnnualReturn">？？</span>%</p>
+                                    <a href="#" class="card-link btn btn-outline-primary"
+                                        data-userpage-editbtn="expectedInvestmentAnnualReturn">編輯</a>
+                                    <a href="#" class="card-link btn btn btn-outline-danger" data-userpage-savebtn="expectedInvestmentAnnualReturn">存檔</a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-6">
+                            <div class="card align-items-center text-center">
+                                <div class="card-body">
+                                    <h5 class="card-title fs-4">目前已進行投資金額<span class="calc-area-form-require ms-2">*</span></h5>
+                                    <p class="card-text py-3 mb-2" data-userpage-content="currentInvestment"><span
+                                            data-userpage-FINum-render="currentInvestment">？？？</span>萬</p>
+                                    <a href="#" class="card-link btn btn-outline-primary"
+                                        data-userpage-editbtn="currentInvestment">編輯</a>
+                                    <a href="#" class="card-link btn btn btn-outline-danger" data-userpage-savebtn="currentInvestment">存檔</a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-6">
+                            <div class="card align-items-center text-center">
+                                <div class="card-body">
+                                    <h5 class="card-title fs-4">預估每年可投資金額<span class="calc-area-form-require ms-2">*</span></h5>
+                                    <p class="card-text py-3 mb-2" data-userpage-content="annualInvestment"><span
+                                            data-userpage-FINum-render="annualInvestment">？？？</span>萬</p>
+                                    <a href="#" class="card-link btn btn-outline-primary"
+                                        data-userpage-editbtn="annualInvestment">編輯</a>
+                                    <a href="#" class="card-link btn btn btn-outline-danger" data-userpage-savebtn="annualInvestment">存檔</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+
+                    </div>
                 </div>
             </div>
         </div>

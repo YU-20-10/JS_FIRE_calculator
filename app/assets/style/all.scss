@@ -37,7 +37,7 @@ header {
   background: #1A1A1A;
 
   .navbar {
-    @include py(12px,12px)
+    @include py(12px, 12px)
   }
 
   .nav-link {
@@ -174,7 +174,7 @@ header {
 
   .btn-radial {
     border-radius: 10px;
-    @include px(103.5px, 60px);
+    @include px(80.5px, 60px);
     @include font(28px, 32px);
   }
 }
@@ -187,11 +187,13 @@ header {
 
   &-wrap {
     z-index: 3;
+    max-width: 100%;
   }
 
   &-form {
     padding-top: 60px;
     padding-bottom: 28px;
+    color: white;
     background-color: #2f3e51;
     border: 2px solid white;
     border-radius: 20px;
@@ -205,13 +207,46 @@ header {
       padding-top: 70px;
       padding-bottom: 30px;
       position: relative;
-      left: 70%;
+      left: 65%;
+      top: -5%;
     }
   }
 
-  // &-form-group {
-  //   @include font(20px, 20px);
-  // }
+  &-form-require {
+    vertical-align: top;
+    color: red;
+  }
+
+  &-info {
+    color: $primary;
+    @include font(20px, 24px);
+  }
+
+  &-info-chart {
+    position: absolute;
+    bottom: 91%;
+
+    @include destop {
+      bottom: 50%;
+    }
+  }
+
+  &-info-sm {
+    font-size: 20px;
+    color: $primary;
+  }
+
+  &-return {
+    min-height: 20px;
+    font-size: 10px;
+    color: red;
+    padding-top: 2px;
+    padding-bottom: 2px;
+  }
+
+  &-return-wrap {
+    min-height: 20px;
+  }
 
   &-label {
     margin-bottom: 10px;
@@ -224,6 +259,7 @@ header {
     border-radius: 5px;
     border-width: 0px;
     text-align: center;
+
   }
 
   &-input-s {
@@ -257,6 +293,8 @@ header {
     background-color: transparent;
   }
 
+
+
   &::before {
     content: "";
     position: absolute;
@@ -266,6 +304,11 @@ header {
     left: 0;
     background-image: url("../images/clac_gradient_area.png");
     background-size: cover;
+  }
+
+
+  ::placeholder {
+    color: #CCCCCC;
   }
 
   .btn-outline-primary {
@@ -321,12 +364,29 @@ header {
 
 
 .user-login {
+  &-return {
+    min-height: 22px;
+    font-size: 10px;
+    color: red;
+    padding-top: 2px;
+    padding-bottom: 2px;
+  }
+
   @include py(60px, 100px);
 }
 
 
-
 .user-register {
+
+  &-return {
+    min-height: 22px;
+    font-size: 10px;
+    color: red;
+    padding-top: 2px;
+    padding-bottom: 2px;
+
+  }
+
   @include py(60px, 100px);
 }
 
@@ -351,7 +411,7 @@ header {
   &-bg-img {
     height: 50%;
     width: 100%;
-    
+
     &::before {
       content: "";
       position: absolute;
@@ -404,10 +464,11 @@ header {
       width: 50%;
     }
   }
-
 }
 
-.user-page-FINum  {
+
+
+.userpage-FINum {
   @include py(60px, 100px);
   @include font(20px, 24px);
 
@@ -421,6 +482,7 @@ header {
     right: 0;
     left: 80%;
     z-index: 3;
+    opacity: 0.6;
   }
 
   &-icon {
@@ -433,14 +495,14 @@ header {
     &:hover {
       background: white;
       color: black;
-      
+
     }
   }
 
   &-two-column {
     width: 100%;
 
-    @include destop{
+    @include destop {
       width: 45%;
     }
   }
@@ -452,32 +514,75 @@ header {
   &-column-small {
     width: 30%;
   }
+
   &-column-md {
     width: 100%;
+    padding-top: 40px;
+    padding-bottom: 16px;
 
     @include destop {
       width: 50%;
     }
   }
+
+  &-return {
+    min-height: 28px;
+    font-size: 16px;
+    color: red;
+    padding-top: 2px;
+    padding-bottom: 2px;
+  }
+
+  ::placeholder {
+    font-size: 20px;
+  }
+
+  ::-webkit-input-placeholder {
+    /* Chrome, Safari */
+    font-size: 20px;
+  }
+
+  :-ms-input-placeholder {
+    /* IE 10+ */
+    font-size: 20px;
+  }
+
+  ::-moz-placeholder {
+    /* Firefox 19+ */
+    font-size: 20px;
+  }
+
 }
 
 .backstage {
   &-wrap {
     height: 100vh;
   }
-  
+
   &-menu {
     width: 200px;
   }
-  
+
+  &-search {
+    min-width: 60px;
+  }
+
   .active {
     background: white;
   }
-  
+
   &-user-img {
     height: 50px;
     width: 50px;
     // background: url("https://images.unsplash.com/photo-1669130950037-3d33bd490971?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1854&q=80")  center/cover;
   }
-}
 
+  &-userData-edited-return {
+    min-height: 15px;
+    font-size: 8px;
+    color: red;
+    padding-top: 2px;
+    padding-bottom: 2px;
+    text-align: center;
+  }
+}
