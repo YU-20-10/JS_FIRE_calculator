@@ -37,9 +37,10 @@
               </li>
             </ul>
             <div class="navbar-nav">
-              <button type="button" class="btn  btn-radial me-5"><a  href="#clacArea" class=" fw-bolder text-white text-decoration-none">FIRE計算機</a></button>
+              <button type="button" class="btn  btn-radial me-5"><a href="#clacArea"
+                  class=" fw-bolder text-white text-decoration-none">FIRE計算機</a></button>
               <div class="usermenu dropdown nav-item">
-                <a class="usermenu-wrap dropdown-toggle nav-link p-0"id="userBtnDropdown" role="button"
+                <a class="usermenu-wrap dropdown-toggle nav-link p-0" id="userBtnDropdown" role="button"
                   data-bs-toggle="dropdown" aria-expanded="false" data-nav-user-img>
                   <!-- <span class="usermenu-icon material-symbols-outlined text-primary align-middle">
                     account_circle
@@ -71,28 +72,19 @@
                 <div class="col-sm-10">
                     <input type="text" class="form-control" id="login-email" placeholder="example@gmail.com"
                         name="email">
+                    <span class="user-login-return d-block" data-login-return-message="email"></span>
                 </div>
             </div>
             <div class="mb-5 row w-100">
                 <label for="login-password" class="col-sm-2 col-form-label">密碼</label>
                 <div class="col-sm-10">
                     <input type="password" class="form-control" id="login-password" placeholder="請輸入密碼" name="password">
+                    <span class="user-login-return d-block" data-login-return-message="password"></span>
                 </div>
             </div>
             <div>
                 <a role="button" class="loginBtn btn btn-primary px-4 me-3" data-login>登入</a>
                 <a role="button" class="btn btn-outline-secondary">忘記密碼</a>
-
-                <!-- Modal -->
-                <!--  data-bs-toggle="modal" data-bs-target="#exampleModal" -->
-                <!-- <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel"
-                    aria-hidden="true">
-                    <div class="modal-dialog">
-                        <div class="modal-content">
-                            
-                        </div>
-                    </div>
-                </div> -->
             </div>
         </form>
     </div>
@@ -103,7 +95,7 @@
         <div class="row justify-content-center">
           <div class="col-xl-11">
             <h1><a href="#" class="footer-logo d-block text-decoration-none">FIRE計算機</a></h1>
-            <nav class="d-flex justify-content-between">
+            <nav class="d-flex flex-column flex-xl-row justify-content-xl-between ">
               <ul class="d-flex list-unstyled text-white">
                 <li><a href="#" class="footer-link fs-3 pe-6 border-end text-decoration-none text-reset">首頁</a></li>
                 <li><a href="#" class="footer-link fs-3 px-6 border-end text-decoration-none text-reset">文章</a></li>

@@ -37,9 +37,10 @@
               </li>
             </ul>
             <div class="navbar-nav">
-              <button type="button" class="btn  btn-radial me-5"><a  href="#clacArea" class=" fw-bolder text-white text-decoration-none">FIRE計算機</a></button>
+              <button type="button" class="btn  btn-radial me-5"><a href="#clacArea"
+                  class=" fw-bolder text-white text-decoration-none">FIRE計算機</a></button>
               <div class="usermenu dropdown nav-item">
-                <a class="usermenu-wrap dropdown-toggle nav-link p-0"id="userBtnDropdown" role="button"
+                <a class="usermenu-wrap dropdown-toggle nav-link p-0" id="userBtnDropdown" role="button"
                   data-bs-toggle="dropdown" aria-expanded="false" data-nav-user-img>
                   <!-- <span class="usermenu-icon material-symbols-outlined text-primary align-middle">
                     account_circle
@@ -64,23 +65,30 @@
 
 
   
-<div class="user-page-FINum container">
+<div class="userpage-FINum container">
     <div class="">
         <div class="row d-flex flex-wrap flex-column flex-xl-row justify-content-center align-items-center">
-            <div class="col-xl-4 col-10 mb-4">
+            <div class="col-xl-4 col-10 mb-2">
                 <div class=" text-center border fs-4">
-                    <p class="border-bottom p-2 bg-primary text-secondary">你的財富自由目標為</p>
-                    <p data-userpage-FINum>？？？萬</p>
+                    <p class="border-bottom p-2 bg-primary text-dark">你的財富自由目標為</p>
+                    <p><span data-userpage-FINum>？？？</span></p>
                 </div>
+
             </div>
-            <div class="user-page-FINum-fixed">
-                <a class="user-page-FINum-icon rounded-circle d-flex justify-content-center align-items-center  btn btn-outline-primary"   role="button">計算</a>
+            <div class="d-flex justify-content-end mb-4">
+                <a href="#" role="button" class="btn btn-outline-secondary fs-5 p-3"
+                    data-userpage-clac-btn-top>計算財富自由目標</a>
             </div>
+            <!-- <div class="userpage-FINum-fixed">
+                <a class="userpage-FINum-icon rounded-circle d-flex justify-content-center align-items-center  btn btn-outline-primary" role="button" data-userpage-clac-btn>計算</a>
+            </div> -->
+
             <div class="col-12 mb-3 mb-xl-0">
                 <p class="d-flex justify-content-between align-items-center bg-secondary ">
                     <a class="py-2 ps-2 d-block w-100 text-decoration-none text-white text-center w-80">
-                        目前的年支出
-                        <input type="text" name="annualExpenses" class="mx-2" data-FINum-annual-expenses>
+                        預估退休後年支出
+                        <input type="text" name="annualExpenses" class="mx-2" data-userpage-sum="annualExpenses"
+                        data-userpage-FINum-render="annualExpenses" placeholder="依下方欄位數值自動計算" disabled>
                         萬
                     </a>
                     <a class="d-block" data-bs-toggle="collapse" href="#userAnnualExpenses" role="button"
@@ -88,46 +96,74 @@
                             class="material-symbols-outlined px-3">expand_circle_down</span></a>
                 </p>
                 <div class="collapse show" id="userAnnualExpenses">
-                    <form action="" data-FINum-annual-expenses-form>
+                    <form action="" data-userpage-form="annualExpenses">
                         <div class=" d-flex flex-xl-row flex-column justify-content-xl-between justify-content-center">
                             <ul
-                                class="user-page-FINum-two-column card card-body list-unstyled align-items-center me-xl-3">
-                                <li class="px-2 px-xl-3 py-2 my-2 d-flex align-items-center">
+                                class="userpage-FINum-two-column card card-body list-unstyled align-items-center me-xl-3">
+                                <li class="px-2 px-xl-3 pt-2 mt-2 d-flex align-items-center">
                                     居住
-                                    <input type="text" class="mx-2" name="living">
+                                    <input type="text" class="mx-3" name="living">
                                     萬
                                 </li>
-                                <li class="px-2 px-xl-3 py-2 my-2 d-flex align-items-center">
+                                <li>
+                                    <span class="userpage-FINum-return d-block"
+                                        data-userpage-FINum-annualExpenses-return-message="living"></span>
+                                </li>
+                                <li class="px-2 px-xl-3 pt-2 mt-2 d-flex align-items-center">
                                     餐飲
-                                    <input type="text" class="mx-2" name="food">
+                                    <input type="text" class="mx-3" name="food">
                                     萬
                                 </li>
-                                <li class="px-2 px-xl-3 py-2 my-2 d-flex align-items-center">
+                                <li>
+                                    <span class="userpage-FINum-return d-block"
+                                        data-userpage-FINum-annualExpenses-return-message="food"></span>
+                                </li>
+                                <li class="px-2 px-xl-3 pt-2 mt-2 d-flex align-items-center">
                                     娛樂
-                                    <input type="text" class="mx-2" name="entertainment">
+                                    <input type="text" class="mx-3" name="entertainment">
                                     萬
                                 </li>
-                                <li class="px-2 px-xl-3 py-2 my-2 d-flex align-items-center">
+                                <li>
+                                    <span class="userpage-FINum-return d-block"
+                                        data-userpage-FINum-annualExpenses-return-message="entertainment"></span>
+                                </li>
+                                <li class="px-2 px-xl-3 pt-2 mt-2 d-flex align-items-center">
                                     稅金
-                                    <input type="text" class="mx-2" name="tax">
+                                    <input type="text" class="mx-3" name="tax">
                                     萬
+                                </li>
+                                <li>
+                                    <span class="userpage-FINum-return d-block"
+                                        data-userpage-FINum-annualExpenses-return-message="tax"></span>
                                 </li>
                             </ul>
-                            <ul class="user-page-FINum-two-column card card-body list-unstyled align-items-center">
-                                <li class="px-2 px-xl-3 py-2 my-2 d-flex align-items-center">
+                            <ul class="userpage-FINum-two-column card card-body list-unstyled align-items-center">
+                                <li class="px-2 px-xl-3 pt-2 mt-2 d-flex align-items-center">
                                     交通
-                                    <input type="text" class="mx-2" name="transportation">
+                                    <input type="text" class="mx-3" name="transportation">
                                     萬
                                 </li>
-                                <li class="px-2 px-xl-3 py-2 my-2 d-flex align-items-center">
+                                <li>
+                                    <span class="userpage-FINum-return d-block"
+                                        data-userpage-FINum-annualExpenses-return-message="transportation"></span>
+                                </li>
+                                <li class="px-2 px-xl-3 pt-2 mt-2 d-flex align-items-center">
                                     醫療
-                                    <input type="text" class="mx-2" name="medical">
+                                    <input type="text" class="mx-3" name="medical">
                                     萬
                                 </li>
-                                <li class="px-2 px-xl-3 py-2 my-2 d-flex align-items-center">
+                                <li>
+                                    <span class="userpage-FINum-return d-block"
+                                        data-userpage-FINum-annualExpenses-return-message="medical"></span>
+                                </li>
+                                <li class="px-2 px-xl-3 pt-2 mt-2 d-flex align-items-center">
                                     學習
-                                    <input type="text" class="mx-2" name="learning">
+                                    <input type="text" class="mx-3" name="learning">
                                     萬
+                                </li>
+                                <li>
+                                    <span class="userpage-FINum-return d-block"
+                                        data-userpage-FINum-annualExpenses-return-message="learning"></span>
                                 </li>
                             </ul>
                         </div>
@@ -139,7 +175,8 @@
                 <p class="d-flex justify-content-between align-items-center bg-secondary ">
                     <a class="py-2 ps-2 d-block w-100 text-decoration-none text-white text-center w-80">
                         人生各階段大筆支出
-                        <input type="text" name="oneTimeExpenses" class="mx-2" data-FINum-onetime-expenses>
+                        <input type="text" name="oneTimeExpenses" class="mx-2" data-userpage-sum="oneTimeExpenses"
+                        data-userpage-FINum-render="oneTimeExpenses" placeholder="依下方欄位數值自動計算" disabled>
                         萬
                     </a>
                     <a class="d-block" data-bs-toggle="collapse" href="#userOneTimeExpenses" role="button"
@@ -147,19 +184,25 @@
                             class="material-symbols-outlined px-3">expand_circle_down</span></a>
                 </p>
                 <div class="collapse show" id="userOneTimeExpenses">
-                    <form action="" data-FINum-onetime-expenses-form>
+                    <form action="" data-userpage-form="oneTimeExpenses">
                         <div
                             class=" d-flex flex-xl-row flex-column justify-content-xl-between justify-content-center mb-3">
                             <div
                                 class=" card card-body list-unstyled align-items-center flex-xl-row flex-column justify-content-center py-0 border-0">
-                                <div class="user-page-FINum-column-md px-xl-3 py-3 border text-center">
-                                    預計<input type="text" class="mb-3" name="oneTimeExpensesTime1">年後<br>
-                                    需要支出<input type="text" name="oneTimeExpenses1">萬
+                                <div class="userpage-FINum-column-md px-xl-3 border text-center">
+                                    預計<input type="text" name="oneTimeExpensesTime1" data-oneTimeExpenses="1">年後
+                                    <span class="userpage-FINum-return d-block"
+                                        data-userpage-FINum-oneTimeExpenses-return-message="oneTimeExpensesTime1"></span>
+                                    需要支出<input type="text" class="mt-3" name="oneTimeExpenses1"
+                                        data-oneTimeExpenses="1">萬
+                                    <span class="userpage-FINum-return d-block"
+                                        data-userpage-FINum-oneTimeExpenses-return-message="oneTimeExpenses1"></span>
                                 </div>
                                 <div
-                                    class="user-page-FINum-column-md bg-light d-flex flex-column justify-content-center align-items-center h-100 px-xl-3 py-3 border">
+                                    class="userpage-FINum-column-md bg-light d-flex flex-column justify-content-center align-items-center h-100 px-xl-3 py-3 border">
                                     進行複利推算後，目前應存入金額為
-                                    <div class="mt-3" data-FINum-onetime-expenses-1>???萬</div>
+                                    <div class="mt-3"><span
+                                            data-userpage-FINum-oneTimeExpenses="oneTimeExpenses1">???</span>萬</div>
                                 </div>
                             </div>
                         </div>
@@ -167,14 +210,20 @@
                             class=" d-flex flex-xl-row flex-column justify-content-xl-between justify-content-center mb-3">
                             <div
                                 class=" card card-body list-unstyled align-items-center flex-xl-row flex-column justify-content-center py-0 border-0">
-                                <div class="user-page-FINum-column-md px-xl-3 py-3 border text-center">
-                                    預計<input type="text" class="mb-3" name="oneTimeExpensesTime2">年後<br>
-                                    需要支出<input type="text" name="oneTimeExpenses2">萬
+                                <div class="userpage-FINum-column-md px-xl-3 border text-center">
+                                    預計<input type="text" name="oneTimeExpensesTime2" data-oneTimeExpenses="2">年後
+                                    <span class="userpage-FINum-return d-block"
+                                        data-userpage-FINum-oneTimeExpenses-return-message="oneTimeExpensesTime2"></span>
+                                    需要支出<input type="text" class="mt-3" name="oneTimeExpenses2"
+                                        data-oneTimeExpenses="2">萬
+                                    <span class="userpage-FINum-return d-block"
+                                        data-userpage-FINum-oneTimeExpenses-return-message="oneTimeExpenses2"></span>
                                 </div>
                                 <div
-                                    class="user-page-FINum-column-md bg-light d-flex flex-column justify-content-center align-items-center h-100 px-xl-3 py-3 border">
+                                    class="userpage-FINum-column-md bg-light d-flex flex-column justify-content-center align-items-center h-100 px-xl-3 py-3 border">
                                     進行複利推算後，目前應存入金額為
-                                    <div class="mt-3" data-FINum-onetime-expenses-2>???萬</div>
+                                    <div class="mt-3"><span
+                                            data-userpage-FINum-oneTimeExpenses="oneTimeExpenses2">???</span>萬</div>
                                 </div>
                             </div>
                         </div>
@@ -182,14 +231,20 @@
                             class=" d-flex flex-xl-row flex-column justify-content-xl-between justify-content-center mb-3">
                             <div
                                 class=" card card-body list-unstyled align-items-center flex-xl-row flex-column justify-content-center py-0 border-0">
-                                <div class="user-page-FINum-column-md px-xl-3 py-3 border text-center">
-                                    預計<input type="text" class="mb-3" name="oneTimeExpensesTime3">年後<br>
-                                    需要支出<input type="text" name="oneTimeExpenses3">萬
+                                <div class="userpage-FINum-column-md px-xl-3 border text-center">
+                                    預計<input type="text" name="oneTimeExpensesTime3" data-oneTimeExpenses="3">年後
+                                    <span class="userpage-FINum-return d-block"
+                                        data-userpage-FINum-oneTimeExpenses-return-message="oneTimeExpensesTime3"></span>
+                                    需要支出<input type="text" class="mt-3" name="oneTimeExpenses3"
+                                        data-oneTimeExpenses="3">萬
+                                    <span class="userpage-FINum-return d-block"
+                                        data-userpage-FINum-oneTimeExpenses-return-message="oneTimeExpenses3"></span>
                                 </div>
                                 <div
-                                    class="user-page-FINum-column-md bg-light d-flex flex-column justify-content-center align-items-center h-100 px-xl-3 py-3 border">
+                                    class="userpage-FINum-column-md bg-light d-flex flex-column justify-content-center align-items-center h-100 px-xl-3 py-3 border">
                                     進行複利推算後，目前應存入金額為
-                                    <div class="mt-3" data-FINum-onetime-expenses-3>???萬</div>
+                                    <div class="mt-3"><span
+                                            data-userpage-FINum-oneTimeExpenses="oneTimeExpenses3">???</span>萬</div>
                                 </div>
                             </div>
                         </div>
@@ -197,14 +252,20 @@
                             class=" d-flex flex-xl-row flex-column justify-content-xl-between justify-content-center mb-3">
                             <div
                                 class=" card card-body list-unstyled align-items-center flex-xl-row flex-column justify-content-center py-0 border-0">
-                                <div class="user-page-FINum-column-md px-xl-3 py-3 border text-center">
-                                    預計<input type="text" class="mb-3" name="oneTimeExpensesTime4">年後<br>
-                                    需要支出<input type="text" name="oneTimeExpenses4">萬
+                                <div class="userpage-FINum-column-md px-xl-3 border text-center">
+                                    預計<input type="text" name="oneTimeExpensesTime4" data-oneTimeExpenses="4">年後
+                                    <span class="userpage-FINum-return d-block"
+                                        data-userpage-FINum-oneTimeExpenses-return-message="oneTimeExpensesTime4"></span>
+                                    需要支出<input type="text" class="mt-3" name="oneTimeExpenses4"
+                                        data-oneTimeExpenses="4">萬
+                                    <span class="userpage-FINum-return d-block"
+                                        data-userpage-FINum-oneTimeExpenses-return-message="oneTimeExpenses4"></span>
                                 </div>
                                 <div
-                                    class="user-page-FINum-column-md bg-light d-flex flex-column justify-content-center align-items-center h-100 px-xl-3 py-3 border">
+                                    class="userpage-FINum-column-md bg-light d-flex flex-column justify-content-center align-items-center h-100 px-xl-3 py-3 border">
                                     進行複利推算後，目前應存入金額為
-                                    <div class="mt-3" data-FINum-onetime-expenses-4>???萬</div>
+                                    <div class="mt-3"><span
+                                            data-userpage-FINum-oneTimeExpenses="oneTimeExpenses4">???</span>萬</div>
                                 </div>
                             </div>
                         </div>
@@ -215,7 +276,8 @@
                 <p class="d-flex justify-content-between align-items-center bg-secondary ">
                     <a class="py-2 ps-2 d-block w-100 text-decoration-none text-white text-center w-80">
                         預估每年提領率
-                        <input type="text" class="mx-2" value="4" name="targetWithdrawalRate" data-FINum-withdrawal-rate>
+                        <input type="text" class="mx-2" value="4" name="targetWithdrawalRate"
+                            data-userpage-sum="targetWithdrawalRate" data-userpage-FINum-render="targetWithdrawalRate">
                         %
                     </a>
                     <a class="d-block" data-bs-toggle="collapse" href="#userTargetWithdrawalRate" role="button"
@@ -235,7 +297,9 @@
                 <p class="d-flex justify-content-between align-items-center bg-secondary ">
                     <a class="py-2 ps-2 d-block w-100 text-decoration-none text-white text-center w-80">
                         預估每年投資報酬率
-                        <input type="text" class="mx-2" value="7" name="expectedInvestmentAnnualReturn" data-FINum-invest-return>
+                        <input type="text" class="mx-2" value="7" name="expectedInvestmentAnnualReturn"
+                            data-userpage-sum="expectedInvestmentAnnualReturn"
+                            data-userpage-FINum-render="expectedInvestmentAnnualReturn">
                         %
                     </a>
                     <a class="d-block" data-bs-toggle="collapse" href="#userExpectedInvestmentAnnualReturn"
@@ -250,6 +314,10 @@
                     </div>
                 </div>
             </div>
+            <div class="d-flex justify-content-end mb-4">
+                <a href="#" role="button" class="btn btn-outline-secondary fs-5 p-3"
+                    data-userpage-clac-btn-down>計算財富自由目標</a>
+            </div>
         </div>
     </div>
 </div>
@@ -259,7 +327,7 @@
         <div class="row justify-content-center">
           <div class="col-xl-11">
             <h1><a href="#" class="footer-logo d-block text-decoration-none">FIRE計算機</a></h1>
-            <nav class="d-flex justify-content-between">
+            <nav class="d-flex flex-column flex-xl-row justify-content-xl-between ">
               <ul class="d-flex list-unstyled text-white">
                 <li><a href="#" class="footer-link fs-3 pe-6 border-end text-decoration-none text-reset">首頁</a></li>
                 <li><a href="#" class="footer-link fs-3 px-6 border-end text-decoration-none text-reset">文章</a></li>

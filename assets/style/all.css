@@ -12185,8 +12185,8 @@ header .usermenu .dropdown-toggle::after {
 
 .calc-introduction .btn-radial {
   border-radius: 10px;
-  padding-right: 103.5px;
-  padding-left: 103.5px;
+  padding-right: 80.5px;
+  padding-left: 80.5px;
   font-size: 28px;
 }
 
@@ -12219,11 +12219,13 @@ header .usermenu .dropdown-toggle::after {
 
 .calc-area-wrap {
   z-index: 3;
+  max-width: 100%;
 }
 
 .calc-area-form {
   padding-top: 60px;
   padding-bottom: 28px;
+  color: white;
   background-color: #2f3e51;
   border: 2px solid white;
   border-radius: 20px;
@@ -12246,8 +12248,53 @@ header .usermenu .dropdown-toggle::after {
     padding-top: 70px;
     padding-bottom: 30px;
     position: relative;
-    left: 70%;
+    left: 65%;
+    top: -5%;
   }
+}
+
+.calc-area-form-require {
+  vertical-align: top;
+  color: red;
+}
+
+.calc-area-info {
+  color: #00AADF;
+  font-size: 20px;
+}
+
+@media (min-width: 1200px) {
+  .calc-area-info {
+    font-size: 24px;
+  }
+}
+
+.calc-area-info-chart {
+  position: absolute;
+  bottom: 91%;
+}
+
+@media (min-width: 1200px) {
+  .calc-area-info-chart {
+    bottom: 50%;
+  }
+}
+
+.calc-area-info-sm {
+  font-size: 20px;
+  color: #00AADF;
+}
+
+.calc-area-return {
+  min-height: 20px;
+  font-size: 10px;
+  color: red;
+  padding-top: 2px;
+  padding-bottom: 2px;
+}
+
+.calc-area-return-wrap {
+  min-height: 20px;
 }
 
 .calc-area-label {
@@ -12324,6 +12371,26 @@ header .usermenu .dropdown-toggle::after {
   left: 0;
   background-image: url("../images/clac_gradient_area.png");
   background-size: cover;
+}
+
+.calc-area ::-webkit-input-placeholder {
+  color: #CCCCCC;
+}
+
+.calc-area ::-moz-placeholder {
+  color: #CCCCCC;
+}
+
+.calc-area :-ms-input-placeholder {
+  color: #CCCCCC;
+}
+
+.calc-area ::-ms-input-placeholder {
+  color: #CCCCCC;
+}
+
+.calc-area ::placeholder {
+  color: #CCCCCC;
 }
 
 .calc-area .btn-outline-primary {
@@ -12416,6 +12483,14 @@ header .usermenu .dropdown-toggle::after {
   padding-bottom: 60px;
 }
 
+.user-login-return {
+  min-height: 22px;
+  font-size: 10px;
+  color: red;
+  padding-top: 2px;
+  padding-bottom: 2px;
+}
+
 @media (min-width: 1200px) {
   .user-login {
     padding-top: 100px;
@@ -12426,6 +12501,14 @@ header .usermenu .dropdown-toggle::after {
 .user-register {
   padding-top: 60px;
   padding-bottom: 60px;
+}
+
+.user-register-return {
+  min-height: 22px;
+  font-size: 10px;
+  color: red;
+  padding-top: 2px;
+  padding-bottom: 2px;
 }
 
 @media (min-width: 1200px) {
@@ -12512,38 +12595,39 @@ header .usermenu .dropdown-toggle::after {
   }
 }
 
-.user-page-FINum {
+.userpage-FINum {
   padding-top: 60px;
   padding-bottom: 60px;
   font-size: 20px;
 }
 
 @media (min-width: 1200px) {
-  .user-page-FINum {
+  .userpage-FINum {
     padding-top: 100px;
     padding-bottom: 100px;
   }
 }
 
 @media (min-width: 1200px) {
-  .user-page-FINum {
+  .userpage-FINum {
     font-size: 24px;
   }
 }
 
-.user-page-FINum input {
+.userpage-FINum input {
   text-align: center;
 }
 
-.user-page-FINum-fixed {
+.userpage-FINum-fixed {
   position: fixed;
   top: 200px;
   right: 0;
   left: 80%;
   z-index: 3;
+  opacity: 0.6;
 }
 
-.user-page-FINum-icon {
+.userpage-FINum-icon {
   width: 80px;
   height: 80px;
   background: #00AADF;
@@ -12551,37 +12635,82 @@ header .usermenu .dropdown-toggle::after {
   font-size: 20px;
 }
 
-.user-page-FINum-icon:hover {
+.userpage-FINum-icon:hover {
   background: white;
   color: black;
 }
 
-.user-page-FINum-two-column {
+.userpage-FINum-two-column {
   width: 100%;
 }
 
 @media (min-width: 1200px) {
-  .user-page-FINum-two-column {
+  .userpage-FINum-two-column {
     width: 45%;
   }
 }
 
-.user-page-FINum-column-big {
+.userpage-FINum-column-big {
   width: 60%;
 }
 
-.user-page-FINum-column-small {
+.userpage-FINum-column-small {
   width: 30%;
 }
 
-.user-page-FINum-column-md {
+.userpage-FINum-column-md {
   width: 100%;
+  padding-top: 40px;
+  padding-bottom: 16px;
 }
 
 @media (min-width: 1200px) {
-  .user-page-FINum-column-md {
+  .userpage-FINum-column-md {
     width: 50%;
   }
+}
+
+.userpage-FINum-return {
+  min-height: 28px;
+  font-size: 16px;
+  color: red;
+  padding-top: 2px;
+  padding-bottom: 2px;
+}
+
+.userpage-FINum ::-webkit-input-placeholder {
+  font-size: 20px;
+}
+
+.userpage-FINum ::-moz-placeholder {
+  font-size: 20px;
+}
+
+.userpage-FINum :-ms-input-placeholder {
+  font-size: 20px;
+}
+
+.userpage-FINum ::-ms-input-placeholder {
+  font-size: 20px;
+}
+
+.userpage-FINum ::placeholder {
+  font-size: 20px;
+}
+
+.userpage-FINum ::-webkit-input-placeholder {
+  /* Chrome, Safari */
+  font-size: 20px;
+}
+
+.userpage-FINum :-ms-input-placeholder {
+  /* IE 10+ */
+  font-size: 20px;
+}
+
+.userpage-FINum ::-moz-placeholder {
+  /* Firefox 19+ */
+  font-size: 20px;
 }
 
 .backstage-wrap {
@@ -12592,6 +12721,10 @@ header .usermenu .dropdown-toggle::after {
   width: 200px;
 }
 
+.backstage-search {
+  min-width: 60px;
+}
+
 .backstage .active {
   background: white;
 }
@@ -12599,6 +12732,15 @@ header .usermenu .dropdown-toggle::after {
 .backstage-user-img {
   height: 50px;
   width: 50px;
+}
+
+.backstage-userData-edited-return {
+  min-height: 15px;
+  font-size: 8px;
+  color: red;
+  padding-top: 2px;
+  padding-bottom: 2px;
+  text-align: center;
 }
 
 /*# sourceMappingURL=all.css.map */

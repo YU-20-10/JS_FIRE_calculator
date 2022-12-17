@@ -37,9 +37,10 @@
               </li>
             </ul>
             <div class="navbar-nav">
-              <button type="button" class="btn  btn-radial me-5"><a  href="#clacArea" class=" fw-bolder text-white text-decoration-none">FIRE計算機</a></button>
+              <button type="button" class="btn  btn-radial me-5"><a href="#clacArea"
+                  class=" fw-bolder text-white text-decoration-none">FIRE計算機</a></button>
               <div class="usermenu dropdown nav-item">
-                <a class="usermenu-wrap dropdown-toggle nav-link p-0"id="userBtnDropdown" role="button"
+                <a class="usermenu-wrap dropdown-toggle nav-link p-0" id="userBtnDropdown" role="button"
                   data-bs-toggle="dropdown" aria-expanded="false" data-nav-user-img>
                   <!-- <span class="usermenu-icon material-symbols-outlined text-primary align-middle">
                     account_circle
@@ -70,12 +71,14 @@
                 <label for="register-username" class="col-sm-3 col-form-label">暱稱</label>
                 <div class="col-sm-9">
                     <input type="text" class="form-control" id="register-username" placeholder="煞氣a小花" name="name">
+                    <span class="user-register-return d-block" data-register-return-message="name"></span>
                 </div>
             </div>
             <div class="mb-3 row w-100">
                 <label for="register-email" class="col-sm-3 col-form-label">信箱</label>
                 <div class="col-sm-9">
                     <input type="text" class="form-control" id="register-email" placeholder="example@gmail.com" name="email">
+                    <span class="user-register-return d-block" data-register-return-message="email"></span>
                 </div>
             </div>
             <div class="mb-3 row w-100">
@@ -83,6 +86,7 @@
                 <div class="col-sm-9">
                     <input type="password" class="form-control" id="register-password" placeholder="請輸入5~12位英文或數字"
                     name="password">
+                    <span class="user-register-return d-block" data-register-return-message="password"></span>
                 </div>
             </div>
             <div class="mb-5 row w-100">
@@ -90,6 +94,7 @@
                 <div class="col-sm-9">
                     <input type="password" class="form-control" id="register-password-check" placeholder="請再輸入一次密碼"
                     name="passwordCheck">
+                    <span class="user-register-return d-block" data-register-return-message="passwordCheck"></span>
                 </div>
             </div>
             <div>
@@ -104,7 +109,7 @@
         <div class="row justify-content-center">
           <div class="col-xl-11">
             <h1><a href="#" class="footer-logo d-block text-decoration-none">FIRE計算機</a></h1>
-            <nav class="d-flex justify-content-between">
+            <nav class="d-flex flex-column flex-xl-row justify-content-xl-between ">
               <ul class="d-flex list-unstyled text-white">
                 <li><a href="#" class="footer-link fs-3 pe-6 border-end text-decoration-none text-reset">首頁</a></li>
                 <li><a href="#" class="footer-link fs-3 px-6 border-end text-decoration-none text-reset">文章</a></li>

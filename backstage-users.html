@@ -44,9 +44,9 @@ engine: ejs
             </div>
             <div class="w-100 mx-4 container">
                 <div class="d-flex justify-content-between py-3">
-                    <form class="d-flex py-2" role="search">
-                        <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
-                        <button class="btn btn-outline-success" type="submit">Search</button>
+                    <form class="d-flex py-2" role="search" data-backstage-user-search="outer">
+                        <input class="form-control me-2" type="search" placeholder="輸入關鍵字" aria-label="Search" data-backstage-user-search="keyword">
+                        <button class="backstage-search btn btn-outline-success" type="submit" data-backstage-user-search="btn">搜尋</button>
                     </form>
                     <div class="d-flex align-items-center px-3">
                         <div class="usermenu dropdown nav-item">
@@ -55,8 +55,6 @@ engine: ejs
                             </div>
                             <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="userBtnDropdown"
                                 data-nav-dropdowm-menu>
-                                <!-- <li><a class="dropdown-item text-center" href="./login.html">登入</a></li>
-                                <li><a class="dropdown-item text-center" href="./register.html">註冊</a></li> -->
                             </ul>
                         </div>
 
