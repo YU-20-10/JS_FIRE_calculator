@@ -51,6 +51,8 @@ var backstageUserId = document.querySelectorAll("[data-backstage-user-id]");
 var backstageUserSearchOuter = document.querySelector("[data-backstage-user-search=\"outer\"]");
 var backstageUserSearchKeyword = document.querySelector("[data-backstage-user-search=\"keyword\"]");
 var backstagePostsAddbtn = document.querySelector("[data-backstage-posts-addbtn]");
+var backstagePostSearchOuter = document.querySelector("[data-backstage-post-search=\"outer\"]");
+var backstagePostSearchKeyword = document.querySelector("[data-backstage-post-search=\"keyword\"]");
 var userpageFINum = document.querySelector("[data-userpage-FINum]");
 var userpageClacBtnTop = document.querySelector("[data-userpage-clac-btn-top]");
 var userpageClacBtnDown = document.querySelector("[data-userpage-clac-btn-down]");
@@ -84,8 +86,7 @@ var haveUserFIData = ""; //存放有無使用者fidata的布林值
 
 var userFIDataArr = []; //計算出結果時，將結果存放在全域並post全域並post data到json-server
 
-var userpageChangeTarget = "";
-var selectedUserId = 0; //存放後台被選取的user的id
+var userpageChangeTarget = ""; // let selectedUserId = 0; //存放後台被選取的user的id
 
 var loginConstraints = {
   email: {
@@ -806,7 +807,7 @@ var searchUserData = function searchUserData(keyword) {
 
 var renderBackstagePostData = function renderBackstagePostData(data) {
   var resData = data.reduce(function (acc, crr) {
-    acc += "\n    <tr class=\"align-baseline\">\n      <th scope=\"row\">".concat(crr.id, "</th>\n      <td>").concat(crr.user.name, "</td>\n      <td>").concat(crr.title, "</td>\n      <td>\n        <button type=\"button\" class=\"btn btn-outline-secondary\"  data-bs-toggle=\"modal\" data-bs-target=\"#showAndEdit").concat(crr.id, "\" data-backstage-showBtn>\u67E5\u770B/\u7DE8\u8F2F</button>\n        <button type=\"button\" class=\"btn btn-outline-danger\"  data-bs-toggle=\"modal\" data-bs-target=\"#delete").concat(crr.id, "\" data-backstage-deleteBtn>\u522A\u9664</button>\n      </td>\n    </tr>\n    <div class=\"modal fade\" id=\"delete").concat(crr.id, "\" tabindex=\"-1\" aria-labelledby=\"thisPostDelete\" aria-hidden=\"true\">\n      <div class=\"modal-dialog modal-dialog-centered modal-dialog-scrollable\">\n        <div class=\"modal-content\">\n          <div class=\"modal-header\">\n            <h1 class=\"modal-title fs-5\" id=\"thisPostDelete\">delete post</h1>\n            <button type=\"button\" class=\"btn-close\" data-bs-dismiss=\"modal\" aria-label=\"Close\"></button>\n          </div>\n          <div class=\"modal-body\">\n            \u662F\u5426\u78BA\u8A8D\u8981\u522A\u9664\u6B64\u7BC7\u8CBC\u6587\uFF1F\n          </div>\n          <div class=\"modal-footer\">\n            <button type=\"button\" class=\"btn btn-secondary\" data-bs-dismiss=\"modal\">Close</button>\n            <button type=\"button\" class=\"btn btn-danger\" data-backstage-post-delete=\"").concat(crr.id, "\">\u522A\u9664\u8CBC\u6587</button>\n          </div>\n        </div>\n      </div>\n    </div>\n    <div class=\"modal fade\" id=\"showAndEdit").concat(crr.id, "\" tabindex=\"-1\" aria-labelledby=\"thisPostData\" aria-hidden=\"true\">\n      <div class=\"modal-dialog modal-dialog-centered modal-dialog-scrollable modal-lg\">\n        <div class=\"modal-content\">\n          <div class=\"modal-header\">\n            <h1 class=\"modal-title fs-5\" id=\"thisPostData\">post data</h1>\n            <button type=\"button\" class=\"btn-close\" data-bs-dismiss=\"modal\" aria-label=\"Close\"></button>\n        </div>\n        <div class=\"modal-body\">\n          <form action=\"\" class=\"w-100\" data-backstage-edit-postlist>\n            <div class=\"calc-area-form-group mb-2\">\n              <label class=\"me-2\" for=\"postId").concat(crr.id, "\">id\uFF1A</label>\n              <input type=\"text\" class=\"w-80\" id=\"postId").concat(crr.id, "\" name=\"id\" value=\"").concat(crr.id, "\" disabled>\n            </div>\n            <div class=\"calc-area-form-group mb-2\">\n              <label class=\"me-2\" for=\"userId").concat(crr.id, "\">userId\uFF1A</label>\n              <input type=\"text\" class=\"w-80\" id=\"userId").concat(crr.id, "\" name=\"userId\" value=\"").concat(crr.userId, "\" disabled>\n            </div>\n            <div class=\"calc-area-form-group mb-2\">\n              <label class=\"me-2\" for=\"userName").concat(crr.id, "\">userName\uFF1A</label>\n              <input type=\"text\" class=\"w-80\" id=\"userName").concat(crr.id, "\" name=\"userName\" value=\"").concat(crr.user.name, "\" disabled>\n            </div>\n            <div class=\"calc-area-form-group mb-2\">\n              <label class=\"me-2\" for=\"title").concat(crr.id, "\">title\uFF1A</label>\n              <input type=\"text\" class=\"w-80\" id=\"title").concat(crr.id, "\" name=\"email\" value=\"").concat(crr.title, "\">\n            </div>\n            <div class=\"calc-area-form-group mb-2\">\n              <label class=\"me-2\" for=\"content").concat(crr.id, "\">content\uFF1A</label>\n              <textarea type=\"form-control\" rows=\"6\" class=\"w-100 d-block\" id=\"content").concat(crr.id, "\" name=\"userImg\">").concat(crr.content, "</textarea>\n            </div>\n          </form>\n        </div>\n        <div class=\"modal-footer\">\n          <button type=\"button\" class=\"btn btn-secondary\" data-bs-dismiss=\"modal\">\u95DC\u9589</button>\n          <button type=\"button\" class=\"btn btn-primary\" data-backstage-post-save=\"").concat(crr.id, "\">\u5132\u5B58</button>\n        </div>\n      </div>\n    </div>\n    \n\n    ");
+    acc += "\n    <tr class=\"align-baseline\">\n      <th scope=\"row\">".concat(crr.id, "</th>\n      <td>").concat(crr.user.name, "</td>\n      <td>").concat(crr.title ? crr.title : "無標題", "</td>\n      <td>\n        <button type=\"button\" class=\"btn btn-outline-secondary\"  data-bs-toggle=\"modal\" data-bs-target=\"#showAndEdit").concat(crr.id, "\" data-backstage-showBtn>\u67E5\u770B/\u7DE8\u8F2F</button>\n        <button type=\"button\" class=\"btn btn-outline-danger\"  data-bs-toggle=\"modal\" data-bs-target=\"#delete").concat(crr.id, "\" data-backstage-deleteBtn>\u522A\u9664</button>\n      </td>\n    </tr>\n    <div class=\"modal fade\" id=\"delete").concat(crr.id, "\" tabindex=\"-1\" aria-labelledby=\"thisPostDelete\" aria-hidden=\"true\">\n      <div class=\"modal-dialog modal-dialog-centered modal-dialog-scrollable\">\n        <div class=\"modal-content\">\n          <div class=\"modal-header\">\n            <h1 class=\"modal-title fs-5\" id=\"thisPostDelete\">delete post</h1>\n            <button type=\"button\" class=\"btn-close\" data-bs-dismiss=\"modal\" aria-label=\"Close\"></button>\n          </div>\n          <div class=\"modal-body\">\n            \u662F\u5426\u78BA\u8A8D\u8981\u522A\u9664\u6B64\u7BC7\u8CBC\u6587\uFF1F\n          </div>\n          <div class=\"modal-footer\">\n            <button type=\"button\" class=\"btn btn-secondary\" data-bs-dismiss=\"modal\">Close</button>\n            <button type=\"button\" class=\"btn btn-danger\" data-backstage-post-delete=\"").concat(crr.id, "\">\u522A\u9664\u8CBC\u6587</button>\n          </div>\n        </div>\n      </div>\n    </div>\n    <div class=\"modal fade\" id=\"showAndEdit").concat(crr.id, "\" tabindex=\"-1\" aria-labelledby=\"thisPostData\" aria-hidden=\"true\">\n      <div class=\"modal-dialog modal-dialog-centered modal-dialog-scrollable modal-lg\">\n        <div class=\"modal-content\">\n          <div class=\"modal-header\">\n            <h1 class=\"modal-title fs-5\" id=\"thisPostData\">post data</h1>\n            <button type=\"button\" class=\"btn-close\" data-bs-dismiss=\"modal\" aria-label=\"Close\"></button>\n        </div>\n        <div class=\"modal-body\">\n          <form action=\"\" class=\"w-100\" data-backstage-edit-postlist>\n            <div class=\"calc-area-form-group mb-2\">\n              <label class=\"me-2\" for=\"postId").concat(crr.id, "\">id\uFF1A</label>\n              <input type=\"text\" class=\"w-80\" id=\"postId").concat(crr.id, "\" name=\"id\" value=\"").concat(crr.id, "\" disabled>\n            </div>\n            <div class=\"calc-area-form-group mb-2\">\n              <label class=\"me-2\" for=\"userId").concat(crr.id, "\">userId\uFF1A</label>\n              <input type=\"text\" class=\"w-80\" id=\"userId").concat(crr.id, "\" name=\"userId\" value=\"").concat(crr.userId, "\"  disabled>\n            </div>\n            <div class=\"calc-area-form-group mb-2\">\n              <label class=\"me-2\" for=\"userName").concat(crr.id, "\">userName\uFF1A</label>\n              <input type=\"text\" class=\"w-80\" id=\"userName").concat(crr.id, "\" name=\"userName\" value=\"").concat(crr.user.name, "\" disabled>\n            </div>\n            <div class=\"calc-area-form-group mb-2\">\n              <label class=\"me-2\" for=\"title").concat(crr.id, "\">title\uFF1A</label>\n              <input type=\"text\" class=\"w-80\" id=\"title").concat(crr.id, "\" name=\"title\" value=\"").concat(crr.title ? crr.title : "", "\" data-edited-post-").concat(crr.id, "=\"title\">\n            </div>\n            <div class=\"calc-area-form-group mb-2\">\n              <label class=\"me-2\" for=\"content").concat(crr.id, "\">content\uFF1A</label>\n              <textarea type=\"form-control\" rows=\"6\" class=\"w-100 d-block\" id=\"content").concat(crr.id, "\" name=\"content\" data-edited-post-").concat(crr.id, "=\"content\">").concat(crr.content ? crr.content : "<p></p>", "</textarea>\n            </div>\n          </form>\n        </div>\n        <div class=\"modal-footer\">\n          <button type=\"button\" class=\"btn btn-secondary\" data-bs-dismiss=\"modal\">\u95DC\u9589</button>\n          <button type=\"button\" class=\"btn btn-primary\" data-backstage-post-save=\"").concat(crr.id, "\">\u5132\u5B58</button>\n        </div>\n      </div>\n    </div>\n    \n\n    ");
     return acc;
   }, "");
   return resData;
@@ -838,6 +839,46 @@ var postPostData = function postPostData(data) {
     window.location.reload();
   })["catch"](function (err) {
     console.error(err);
+  });
+};
+
+var patchPostData = function patchPostData(data, selectPostId) {
+  var userId = localStorage.getItem("userId");
+  var userheaders = {
+    headers: {
+      Authorization: "Bearer ".concat(localStorage.getItem("accessToken"))
+    }
+  };
+  axios.patch("http://localhost:3000/posts/".concat(selectPostId), data, userheaders).then(function (res) {
+    console.log(res.data);
+    window.location.reload();
+  })["catch"](function (err) {
+    console.error(err);
+  });
+};
+
+var deletePostData = function deletePostData(selectPostId) {
+  var userId = localStorage.getItem("userId");
+  var userheaders = {
+    headers: {
+      Authorization: "Bearer ".concat(localStorage.getItem("accessToken"))
+    }
+  };
+  axios["delete"]("http://localhost:3000/posts/".concat(selectPostId), userheaders).then(function (res) {
+    console.log(res);
+    window.location.reload();
+  })["catch"](function (err) {
+    console.log(err);
+  });
+};
+
+var searchPostData = function searchPostData(keyword) {
+  axios.get("http://localhost:3000/posts?_expand=user&q=".concat(keyword)).then(function (res) {
+    console.log(res);
+    var searchData = renderBackstagePostData(res.data);
+    allPostData.innerHTML = searchData;
+  })["catch"](function (err) {
+    console.log(err);
   });
 }; //--------抓取後台資料 end--------
 //--------函士宣告 end--------
@@ -1065,7 +1106,7 @@ if (userpageBtnWrap) {
 
 if (allUserData) {
   allUserData.addEventListener("click", function (e) {
-    selectedUserId = e.target.dataset.backstageUserId;
+    // selectedUserId = e.target.dataset.backstageUserId;
     var selectedUserSave = e.target.dataset.backstageUserSave;
 
     if (selectedUserSave) {
@@ -1124,6 +1165,40 @@ if (backstagePostsAddbtn) {
   backstagePostsAddbtn.addEventListener("click", function (e) {
     console.log(e);
     postPostData("");
+  });
+}
+
+if (allPostData) {
+  allPostData.addEventListener("click", function (e) {
+    var selectedPostSave = e.target.dataset.backstagePostSave;
+    var selectedPostDelete = e.target.dataset.backstagePostDelete;
+
+    if (selectedPostSave) {
+      var editedDataDom = document.querySelectorAll("[data-edited-post-".concat(selectedPostSave, "]"));
+      var editedData = {};
+      editedDataDom.forEach(function (i) {
+        editedData[i.name] = i.value;
+      });
+      patchPostData(editedData, selectedPostSave);
+    }
+
+    if (selectedPostDelete) {
+      var deleteDataDom = document.querySelector("[data-backstage-post-delete=\"".concat(selectedPostDelete, "\"]"));
+      deletePostData(selectedPostDelete);
+    }
+  });
+}
+
+if (backstagePostSearchOuter) {
+  backstagePostSearchOuter.addEventListener("click", function (e) {
+    e.preventDefault();
+    var target = e.target.dataset.backstagePostSearch;
+    console.log(target);
+
+    if (target === "btn") {
+      var keyword = backstagePostSearchKeyword.value;
+      searchPostData(keyword);
+    }
   });
 } //--------DOM元素監聽 end--------
 //畫面載入時，判斷是否是登入狀態
