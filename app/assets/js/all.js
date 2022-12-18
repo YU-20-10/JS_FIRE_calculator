@@ -32,6 +32,8 @@ const backstageUserId = document.querySelectorAll("[data-backstage-user-id]");
 const backstageUserSearchOuter = document.querySelector(`[data-backstage-user-search="outer"]`);
 const backstageUserSearchKeyword = document.querySelector(`[data-backstage-user-search="keyword"]`);
 const backstagePostsAddbtn = document.querySelector(`[data-backstage-posts-addbtn]`);
+const backstagePostSearchOuter = document.querySelector(`[data-backstage-post-search="outer"]`);
+const backstagePostSearchKeyword = document.querySelector(`[data-backstage-post-search="keyword"]`);
 
 
 const userpageFINum = document.querySelector("[data-userpage-FINum]");
@@ -70,7 +72,8 @@ let checkUserEmail = ""; //存放登入後使用者email
 let haveUserFIData = ""; //存放有無使用者fidata的布林值
 let userFIDataArr = []; //計算出結果時，將結果存放在全域並post全域並post data到json-server
 let userpageChangeTarget = "";
-let selectedUserId = 0; //存放後台被選取的user的id
+// let selectedUserId = 0; //存放後台被選取的user的id
+
 
 
 const loginConstraints = {
@@ -936,7 +939,7 @@ const renderBackstagePostData = (data) => {
     <tr class="align-baseline">
       <th scope="row">${crr.id}</th>
       <td>${crr.user.name}</td>
-      <td>${crr.title}</td>
+      <td>${crr.title ? crr.title : "無標題"}</td>
       <td>
         <button type="button" class="btn btn-outline-secondary"  data-bs-toggle="modal" data-bs-target="#showAndEdit${crr.id}" data-backstage-showBtn>查看/編輯</button>
         <button type="button" class="btn btn-outline-danger"  data-bs-toggle="modal" data-bs-target="#delete${crr.id}" data-backstage-deleteBtn>刪除</button>
@@ -974,7 +977,7 @@ const renderBackstagePostData = (data) => {
             </div>
             <div class="calc-area-form-group mb-2">
               <label class="me-2" for="userId${crr.id}">userId：</label>
-              <input type="text" class="w-80" id="userId${crr.id}" name="userId" value="${crr.userId}" disabled>
+              <input type="text" class="w-80" id="userId${crr.id}" name="userId" value="${crr.userId}"  disabled>
             </div>
             <div class="calc-area-form-group mb-2">
               <label class="me-2" for="userName${crr.id}">userName：</label>
@@ -982,11 +985,11 @@ const renderBackstagePostData = (data) => {
             </div>
             <div class="calc-area-form-group mb-2">
               <label class="me-2" for="title${crr.id}">title：</label>
-              <input type="text" class="w-80" id="title${crr.id}" name="email" value="${crr.title}">
+              <input type="text" class="w-80" id="title${crr.id}" name="title" value="${crr.title ? crr.title : ""}" data-edited-post-${crr.id}="title">
             </div>
             <div class="calc-area-form-group mb-2">
               <label class="me-2" for="content${crr.id}">content：</label>
-              <textarea type="form-control" rows="6" class="w-100 d-block" id="content${crr.id}" name="userImg">${crr.content}</textarea>
+              <textarea type="form-control" rows="6" class="w-100 d-block" id="content${crr.id}" name="content" data-edited-post-${crr.id}="content">${crr.content ? crr.content : "<p></p>"}</textarea>
             </div>
           </form>
         </div>
@@ -1031,16 +1034,66 @@ const postPostData = (data) => {
     }
   }
   axios
-    .post(`http://localhost:3000/600/users/${userId}/posts`,data,userheaders)
-    .then((res)=>{
+    .post(`http://localhost:3000/600/users/${userId}/posts`, data, userheaders)
+    .then((res) => {
       console.log(res.data);
       window.location.reload();
     })
-    .catch((err)=>{
+    .catch((err) => {
       console.error(err);
     })
 }
 
+const patchPostData = (data, selectPostId) => {
+  const userId = localStorage.getItem("userId");
+  const userheaders = {
+    headers: {
+      Authorization: `Bearer ${localStorage.getItem("accessToken")}`
+    }
+  }
+  axios
+    .patch(`http://localhost:3000/posts/${selectPostId}`, data, userheaders)
+    .then((res) => {
+      console.log(res.data);
+      window.location.reload();
+    })
+    .catch((err) => {
+      console.error(err);
+    })
+}
+
+const deletePostData = (selectPostId) => {
+  const userId = localStorage.getItem("userId");
+  const userheaders = {
+    headers: {
+      Authorization: `Bearer ${localStorage.getItem("accessToken")}`
+    }
+  }
+  axios
+    .delete(`http://localhost:3000/posts/${selectPostId}`, userheaders)
+    .then((res) => {
+      console.log(res);
+      window.location.reload();
+    })
+    .catch((err) => {
+      console.log(err);
+    })
+}
+
+
+const searchPostData = (keyword) =>{
+  axios
+    .get (`http://localhost:3000/posts?_expand=user&q=${keyword}`)
+    .then((res)=>{
+      console.log(res);
+      const searchData = renderBackstagePostData(res.data);
+      allPostData.innerHTML = searchData;
+
+    })
+    .catch((err)=>{
+      console.log(err);
+    })
+}
 
 //--------抓取後台資料 end--------
 
@@ -1271,7 +1324,7 @@ if (userpageBtnWrap) {
 
 if (allUserData) {
   allUserData.addEventListener("click", (e) => {
-    selectedUserId = e.target.dataset.backstageUserId;
+    // selectedUserId = e.target.dataset.backstageUserId;
     let selectedUserSave = e.target.dataset.backstageUserSave;
 
     if (selectedUserSave) {
@@ -1285,8 +1338,6 @@ if (allUserData) {
         } else {
           editedData[i.name] = i.value;
         }
-
-
       })
       returnMessageDom.forEach((i) => {
         i.textContent = "";
@@ -1323,10 +1374,44 @@ if (backstageUserSearchOuter) {
 }
 
 if (backstagePostsAddbtn) {
-  backstagePostsAddbtn.addEventListener("click",(e)=>{
+  backstagePostsAddbtn.addEventListener("click", (e) => {
     console.log(e);
     postPostData("");
 
+  })
+}
+
+if (allPostData) {
+  allPostData.addEventListener("click", (e) => {
+    const selectedPostSave = e.target.dataset.backstagePostSave;
+    const selectedPostDelete = e.target.dataset.backstagePostDelete;
+    if (selectedPostSave) {
+      let editedDataDom = document.querySelectorAll(`[data-edited-post-${selectedPostSave}]`)
+      let editedData = {};
+      editedDataDom.forEach((i) => {
+        editedData[i.name] = i.value;
+      })
+      patchPostData(editedData, selectedPostSave);
+    }
+
+    if (selectedPostDelete) {
+      const deleteDataDom = document.querySelector(`[data-backstage-post-delete="${selectedPostDelete}"]`)
+      deletePostData(selectedPostDelete);
+    }
+
+  })
+}
+
+if (backstagePostSearchOuter) {
+  backstagePostSearchOuter.addEventListener("click",(e)=>{
+    e.preventDefault();
+    const target = e.target.dataset.backstagePostSearch;
+    console.log(target);
+    if (target === "btn") {
+      const keyword = backstagePostSearchKeyword.value;
+      searchPostData(keyword);
+    }
+    
   })
 }
 
